@@ -12,7 +12,7 @@ const staticUrlPlugin = {
       }
 
       const relativePath = path.relative(process.cwd(), args.path);
-      const publicPath = '/' + relativePath.replace(/\\/g, '/').replace(/dist\//g, '');
+      const publicPath = './' + relativePath.replace(/\\/g, '/').replace(/^\/?dist\//g, '');
 
       return {
         loader: 'js',
