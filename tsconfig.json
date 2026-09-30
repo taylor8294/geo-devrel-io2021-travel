@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "types": [
+      "node",
+      "google.maps"
+    ],
+    "experimentalDecorators": true,
+  }
+}

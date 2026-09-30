@@ -1,0 +1,42 @@
+{
+  "name": "geo-devrel-io2021-travel",
+  "version": "1.0.0",
+  "description": "Demonstration travel application showcasing WebGL-powered features of the Google Maps JavaScript API, including Tilt, Rotation, and WebGL Overlay View with Three.js.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js",
+    "watch": "node --watch-path=src build.js"
+  },
+  "keywords": [
+    "google-maps",
+    "maps-javascript-api",
+    "webgl",
+    "threejs",
+    "travel-app",
+    "3d-maps",
+    "google-io-2021",
+    "webgl-overlay-view",
+    "spatial-visualization"
+  ],
+  "author": "Google Maps Platform Developer Relations",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@material/mwc-button": "^0.27.0",
+    "@material/mwc-drawer": "^0.27.0",
+    "@material/mwc-fab": "^0.27.0",
+    "@material/mwc-icon": "^0.27.0",
+    "@material/mwc-icon-button": "^0.27.0",
+    "@material/mwc-linear-progress": "^0.27.0",
+    "@turf/turf": "^7.4.0",
+    "lit": "^3.3.3",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.66.4",
+    "@types/node": "^26.6.3",
+    "@types/three": "^0.186.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}

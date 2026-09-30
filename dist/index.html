@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Google Maps Platform - WebGL-powered Maps Features</title>
+  <meta name="description" content="A demonstration travel app that uses WebGL-powered maps features of the Maps JavaScript API.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon shortcut" href="favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="A demonstration travel app that uses WebGL-powered maps features of the Maps JavaScript API.">
+  <meta property="twitter:site" content="@GMapsPlatform">
+  <meta property="og:image" content="static/travel/images/share.png">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="Google Maps Platform - Travel with Next Generation Maps">
+  <meta property="twitter:title" content="Google Maps Platform - Travel with Next Generation Maps">
+  <meta property="twitter:description" content="A demonstration travel app that uses WebGL-powered maps features of the Maps JavaScript API.">
+  <link rel="stylesheet" type="text/css" href="static/travel/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block" rel="stylesheet">
+  <script type="module" src="components.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navigation" style="display:none">
+      <mwc-icon class="nav-icon" data-page-id="flights">flight</mwc-icon>
+      <mwc-icon class="nav-icon" data-page-id="taxis">local_taxi</mwc-icon>
+      <mwc-icon class="nav-icon" data-page-id="hotels">hotel</mwc-icon>
+      <mwc-icon class="nav-icon" data-page-id="restaurants">restaurant</mwc-icon>
+      <mwc-icon class="nav-icon" data-page-id="sights">local_see</mwc-icon>
+    </nav>
+    <div class="map-container"></div>
+  </div>
+  <mwc-drawer type="modal">
+    <div class="drawer-content">
+      <header>
+        <mwc-button id="close-drawer-button" class="nav-button" label="Back to Demo" icon="arrow_back_ios"></mwc-button>
+      </header>
+      <div class="drawer-main">
+        <h2 class="drawer-title">WebGL-powered features for the Maps JavaScript API</h2>
+        <p class="drawer-description"> Your world isn’t flat, and now your map isn’t either. With the Maps JavaScript
+          API you can create next generation mapping experiences for the web using WebGL-accelerated features and the
+          same performant, client-side rendered vector map you know from <a href="http://maps.google.com">Google
+            Maps.</a> </p>
+        <p class="drawer-subtitle">Tilt and Rotation (beta)</p>
+        <p class="drawer-description"> Manually and programmatically control up to 67.5 degrees of tilt and full 360
+          degree rotation to create immersive user interactions, and bring Google Map’s oblique 3D building models into
+          your apps for the first time. </p>
+        <p class="drawer-subtitle">WebGL Overlay View (beta)</p>
+        <p class="drawer-description"> Use the rendering power of the GPU on client devices to place 2D and 3D objects
+          directly on the basemap. WebGL Overlay View gives you direct hooks into the WebGL rendering context of the
+          vector basemap, allowing you to create mapping experiences never before possible. </p>
+        <p class="drawer-subtitle">Get Started</p>
+        <p class="drawer-description"> Learn more in the Maps JavaScript API <a
+            href="https://developers.google.com/maps/documentation/javascript/webgl">documentation</a>, or get started
+          with our <a href="https://goo.gle/maps-platform-webgl-codelab">WebGL codelab.</a> </p>
+      </div>
+      <div class="bottom scroll-shadow"></div>
+    </div>
+    <main slot="appContent">
+      <mwc-linear-progress id="loading-bar" indeterminate></mwc-linear-progress>
+      <section id="intro" class="intro" style="display:none">
+        <aside class="intro-sidebar">
+          <div class="icons">
+            <mwc-icon id="flight-icon">flight</mwc-icon>
+            <mwc-icon id="taxi-icon">local_taxi</mwc-icon>
+            <mwc-icon id="hotel-icon">hotel</mwc-icon>
+            <mwc-icon id="restaurant-icon">restaurant</mwc-icon>
+            <mwc-icon id="camera-icon">local_see</mwc-icon>
+          </div>
+          <h2>Google Maps Platform</h2>
+          <h1>WebGL-powered Maps</h1>
+          <p class="description">See how different the world can be when you control and render on the map in three dimensions with the power of WebGL and the Maps JavaScript API.</p>
+          <a class="button__link" id="start-button" tabindex="-1" href="#flights">
+            <mwc-button class="button" raised="" aria-hidden="">Start Exploring</mwc-button>
+          </a>
+        </aside>
+      </section>
+      <div class="pages" style="display:none">
+        <a href="#intro">
+          <div class="travel-wallet"> <gmp-logo></gmp-logo> </div>
+        </a>
+        <mwc-fab id="fab-info" icon="info_outline"></mwc-fab>
+        <div class="page" id="flights" style="display:none"> <travel-flight-route></travel-flight-route> </div>
+        <div class="page" id="taxis" style="display:none"> <travel-taxi-route></travel-taxi-route> </div>
+        <div class="page" id="hotels" style="display:none"> <travel-hotel checkin="03/24/2021" checkout="03/29/2021" accomodation-type="Superior double room"></travel-hotel> </div>
+        <div class="page" id="restaurants" style="display:none"> <travel-restaurant></travel-restaurant> </div>
+        <div class="page" id="sights" style="display:none">
+          <div class="scroll-shadow"></div>
+          <travel-sights></travel-sights>
+          <div class="bottom scroll-shadow"></div>
+        </div>
+        <div class="pagination">
+          <mwc-button id="back-button" class="nav-button" label="Back" icon="arrow_back_ios"></mwc-button>
+          <mwc-button trailingicon="" id="next-button" class="nav-button" label="Next" icon="arrow_forward_ios"></mwc-button>
+        </div>
+      </div>
+    </main>
+  </mwc-drawer>
+  <script type="module" src="bundle.js"></script>
+</body>
+
+</html>
